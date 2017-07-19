@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Auth2</title>
+		<meta charset="UTF-8">
+	</head>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBO9vfKN-NECh_zStSlEon8fMD14xGvCG4",
+    authDomain: "game-dd4ee.firebaseapp.com",
+    databaseURL: "https://game-dd4ee.firebaseio.com",
+    projectId: "game-dd4ee",
+    storageBucket: "game-dd4ee.appspot.com",
+    messagingSenderId: "579709505473"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+	<body>
+
+	<script>
+	firebase.auth().onAuthStateChanged(user){
+		if(user){
+			document.body.innerHtml='<h1>Congrats'+user.displayName +',you are done'</h1>;
+
+		}
+		else{
+			console.log("no user signed in");
+		}
+	}
+	</script>
+	<h1>Congrats you are done</h1>
+
+</html>
